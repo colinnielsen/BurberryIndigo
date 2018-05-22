@@ -1,0 +1,134 @@
+.App {
+  position: absolute;
+  z-index: -5;
+}
+
+.firstvp {
+  /* position: absolute; */
+}
+
+.landing-viewport {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.landing-viewport__button {
+  margin-bottom: 25vh;
+  background-color: rgba(0, 0, 0, .15);
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  color: #dcdcdc;
+  font-size: 16px;
+  padding: 8px 28px;
+  height: auto;
+  text-decoration: none;
+  text-shadow: 0px 0px 0px #dcdcdc;
+  font-family: "didot";
+  z-index: 100;
+}
+
+.landing-viewport__button:hover {
+  background-color: transparent;
+}
+
+.landing-viewport__video {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
+}
+
+h1 {
+  color: rgba(225, 225, 225, .98);
+  font-size: 6rem;
+  font-family: "didot";
+  padding: 0;
+  letter-spacing: 14px;
+  margin-top: 25vh;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .landing-viewport__video {
+    width: 300vw;
+    left: -100vw;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .landing-viewport__video {
+    height: 300vh;
+    top: -100vh;
+  }
+}
+
+@font-face {
+  font-family: "didot";
+  src: url(./assets/Didot-Regular.ttf);
+}
+
+h2 {
+  font-family: "didot";
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: 2.5px;
+}
+
+
+
+header {
+  margin-top: -1%;
+  margin-left: 2%;
+}
+
+.text {
+  font-family: "didot";
+  position: relative;
+  top: 100vh;
+}
+
+.secondvp {
+  background-size: cover;
+  margin-top: -4.5px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  top: 90vh;
+  background: url(assets/bg1.jpg) center center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+.introtext {
+  width: 30rem;
+}
+
+p{
+  width: auto;
+  margin-right: 10rem;
+  font-family: "didot";
+  color: white;
+  font-size: 1.5rem;
+}
+
+.p1 {
+    -webkit-animation-duration: 2.2s;
+    -webkit-animation-delay: .7s;
+
+}
+.p2 {
+    -webkit-animation-duration: 2.2s;
+    -webkit-animation-delay: 2s;
+
+}
