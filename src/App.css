@@ -1,8 +1,13 @@
 .App {
   position: absolute;
+  width:100vw;
   z-index: -5;
 }
-
+html {
+  position: absolute;
+  overflow-x: hidden;
+  max-width: 100%
+}
 .firstvp {
   /* position: absolute; */
 }
@@ -83,8 +88,6 @@ h2 {
   letter-spacing: 2.5px;
 }
 
-
-
 header {
   margin-top: -1%;
   margin-left: 2%;
@@ -97,8 +100,10 @@ header {
 }
 
 .secondvp {
-  background-size: cover;
-  margin-top: -4.5px;
+  background-size: 100vw 100vh;
+  max-height: 100%;
+  overflow-y: hidden;
+  /* margin-top: -4.5px; */
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -107,14 +112,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
+  transition: transform 5s;
+  z-index: -6;
 }
 
 .introtext {
   width: 30rem;
 }
 
-p{
+p {
   width: auto;
   margin-right: 10rem;
   font-family: "didot";
@@ -123,12 +129,45 @@ p{
 }
 
 .p1 {
-    -webkit-animation-duration: 2.2s;
-    -webkit-animation-delay: .7s;
-
+  -webkit-animation-duration: 2.2s;
+  -webkit-animation-delay: .7s;
 }
-.p2 {
-    -webkit-animation-duration: 2.2s;
-    -webkit-animation-delay: 2s;
 
+.p2 {
+  -webkit-animation-duration: 2.2s;
+  -webkit-animation-delay: 2s;
+}
+
+@-webkit-keyframes birdsAnimation {
+  from {
+    left: -25%;
+    bottom: 40%;
+  }
+  to {
+    left: 70%;
+    bottom: 110%;
+  }
+}
+
+
+.secondvp_grassShot {
+  position: absolute;
+  left: -200%;
+  -moz-transform: scaleX(-1) rotate(45deg);
+  -webkit-transform: scaleX(-1) rotate(45deg);
+  -o-transform: scaleX(-1) rotate(45deg);
+  align-self: flex-end;
+  width: 20%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1) rotate(25deg);
+}
+
+.birdOn {
+  animation: birdsAnimation;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-delay: 3s;
+}
+
+.secondvpOn {
+  transform: scale(1.04);
 }
