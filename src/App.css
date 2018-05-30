@@ -1,13 +1,15 @@
 .App {
   position: absolute;
-  width:100vw;
+  width: 100vw;
   z-index: -5;
 }
+
 html {
   position: absolute;
   overflow-x: hidden;
   max-width: 100%
 }
+
 .firstvp {
   /* position: absolute; */
 }
@@ -116,8 +118,25 @@ header {
   z-index: -6;
 }
 
+.thirdvp {
+  background-size: 100vw 100vh;
+  max-height: 100%;
+  overflow-y: hidden;
+  /* margin-top: -4.5px; */
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  top: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: transform 5s;
+  z-index: -6;
+}
+
 .introtext {
   width: 30rem;
+  position: fixed;
 }
 
 p {
@@ -149,7 +168,6 @@ p {
   }
 }
 
-
 .secondvp_grassShot {
   position: absolute;
   left: -200%;
@@ -170,4 +188,59 @@ p {
 
 .secondvpOn {
   transform: scale(1.04);
+}
+
+.scroller {
+  margin-right: 50%;
+  align-self: flex-end;
+  color: #fff;
+  text-decoration: none;
+  width: 60px;
+  display: block;
+  margin-bottom: 5%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+  -webkit-animation-delay: 7s;
+}
+
+.scroller svg {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.scroller svg path {
+  stroke-width: 2px;
+}
+
+.scroller svg .line-3 {
+  animation: pulse 0.5s alternate infinite;
+  animation-delay: 100ms;
+}
+
+.scroller svg .line-2 {
+  animation: pulse 0.5s alternate infinite;
+  animation-delay: 50ms;
+}
+
+.scroller svg .line-1 {
+  animation: pulse 0.5s alternate infinite;
+  animation-delay: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 5px);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
 }
