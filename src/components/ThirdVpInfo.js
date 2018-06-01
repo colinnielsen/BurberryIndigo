@@ -9,7 +9,7 @@ const ThirdVpInfo = (props)=>{
         The aromatic scent features zesty and herbal top notes of lemon oil, blackcurrant and rosemary. Green violet leaf, driftwood and spearmint are layered over a warm and earthy base of amber, white oak moss and musk.
       </p>
       <hr className={props.hidden}></hr>
-      <img className={props.hidden} src={gif}/>
+      <img className={props.hidden2} src={gif} alt="ingredients gif"/>
     </div>
   )
 }

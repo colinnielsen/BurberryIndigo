@@ -10,13 +10,17 @@ import ScrollPrompt from './components/ScrollPrompt.js'
 import IntroText from './components/IntroText.js'
 import DiagionalSVG from './components/DiagionalSVG.js'
 import ThirdVpInfo from './components/ThirdVpInfo.js'
+import DownArrow from './components/DownArrow.js'
+import RecProducts from './components/RecProducts.js'
+import ShopIt from './components/ShopIt.js'
+import Footer from './components/Footer.js'
 
 class App extends Component {
 
   constructor() {
     super()
     this.state = {
-      appClass:"App cantScroll",
+      appClass:"App",
       p1Class: "p1",
       p2Clsss: "p2",
       birdClass: "secondvp_grassShot",
@@ -25,14 +29,18 @@ class App extends Component {
       bottleClass: "bottle bottom",
       topClass: "bottle top",
       pulsatingCircleClass: "pulsating-circle",
-      infoTextAndPic: "hidden"
+      infoTextAndPic: "hidden",
+      infoTextPic: "hidden",
+      downArrow: "hidden"
     }
     this.clickCircle = this.clickCircle.bind(this)
     this.enterScroll = this.enterScroll.bind(this)
     this.enterVp3 = this.enterVp3.bind(this)
+    this.enterVp4 = this.enterVp3.bind(this)
   }
 
   enterScroll() {
+    this.enableScroll()
     document.querySelector('.secondvp').scrollIntoView({behavior: 'smooth'});
     this.setState({
       p1Class: "p1 animated fadeIn",
@@ -45,9 +53,45 @@ class App extends Component {
 
   enterVp3() {
     document.querySelector('.thirdvp').scrollIntoView({behavior: 'smooth'});
-    // this.setState({
-    //   appClass: "App"
-    // })
+    this.setState({
+      pulsatingCircleClass: "pulsating-circle initial customFadeIn2"
+    })
+  }
+
+  scrollToProducts() {
+    document.querySelector('.fourthvp').scrollIntoView({behavior: 'smooth'});
+  }
+
+
+  preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;
+  }
+
+  preventDefaultForScrollKeys(e) {
+    var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+      if (keys[e.keyCode]) {
+          this.preventDefault(e);
+          return false;
+      }
+  }
+
+  disableScroll() {
+    window.onwheel = this.preventDefault;
+    window.onmousewheel = document.onmousewheel = this.preventDefault;
+    window.ontouchmove  = this.preventDefault;
+    document.onkeydown  = this.preventDefaultForScrollKeys;
+  }
+
+  enableScroll() {
+      if (window.removeEventListener)
+          window.removeEventListener('DOMMouseScroll', this.preventDefault, false);
+      window.onmousewheel = document.onmousewheel = null;
+      window.onwheel = null;
+      window.ontouchmove = null;
+      document.onkeydown = null;
   }
 
   setApp() {
@@ -63,16 +107,32 @@ class App extends Component {
     bottleClass: "bottle bottom baseMove",
     topClass: "bottle top capMove",
     pulsatingCircleClass: "pulsating-circle hidden",
-    infoTextAndPic: "initial customFadeIn"
+    infoTextAndPic: "initial customFadeIn",
+    infoTextPic: "initial customFadeIn2",
+    downArrow: "arrowcontainer initial customFadeIn3"
   })
   }
 
+  openLink(){
+    window.open("https://us.burberry.com/mr-burberry-indigo-eau-de-toilette-150ml-p40675671")
+  }
+
+  positionCheck(){
+    var body = document.querySelector('body')
+    if(body.getBoundingClientRect().top < -1){
+      this.enableScroll()
+    }
+  }
+
   componentDidMount() {
+    this.disableScroll()
     this.setApp()
+    this.positionCheck()
   }
 
   render() {
-    return (<div className={this.state.appClass}>
+    return (
+      <div className={this.state.appClass}>
       <Header/>
 
       <div className="firstvp">
@@ -88,9 +148,18 @@ class App extends Component {
       <div className="thirdvp">
         <ColongeBottle clickCircle={this.clickCircle} bottleClass={this.state.bottleClass} topClass={this.state.topClass} pulsatingCircleClass={this.state.pulsatingCircleClass}/>
         <DiagionalSVG />
-        <ThirdVpInfo hidden={this.state.infoTextAndPic}/>
+        <ThirdVpInfo hidden={this.state.infoTextAndPic} hidden2={this.state.infoTextPic}/>
+        <DownArrow scrollToProducts={this.scrollToProducts} arrowClass={this.state.downArrow}/>
       </div>
-    </div>);
+
+      <div className="fourthvp">
+        <RecProducts />
+        <hr/>
+        <ShopIt openLink={this.openLink}/>
+        <Footer />
+      </div>
+    </div>
+  );
   }
 }
 
