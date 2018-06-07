@@ -14,17 +14,19 @@ html {
   max-width: 100%;
 }
 
-@media (max-aspect-ratio: 16/9) {
-  .landing-viewport__video {
-    width: 300vw;
-    left: -100vw;
+@media (min-aspect-ratio: 16/9) {
+  .landing-viewport__video{
+    overflow-y: hidden;    
+    width: 100%;
+    height: auto;
   }
 }
 
-@media (min-aspect-ratio: 16/9) {
+@media (max-aspect-ratio: 16/9) {
   .landing-viewport__video {
-    height: 400vh;
-    top: -100vh;
+    overflow-y: hidden;
+    width: auto;
+    height: 100%;
   }
 }
 
@@ -177,8 +179,9 @@ html {
 .landing-viewport__video {
   position: absolute;
   top: 0;
-  height: 100vh;
   z-index: -1;
+  min-width: 100%; 
+  min-height: 100%;
 }
 
 .landing-viewport__button {
@@ -473,8 +476,9 @@ span {
 }
 
 .thirdvpInfo img {
-  margin-top: 10%;
+  margin-top: 10vh;
   width: 75%;
+  max-height: 30vh;
 }
 
 .bottom {
