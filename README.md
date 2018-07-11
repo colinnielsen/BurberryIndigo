@@ -14,6 +14,8 @@ Single page site for new Burberry colonge "Indigo". Project was made as an inter
 * Refine Mobile compatibility
 
 ## Demo
+functionality demo
 ![](https://media.giphy.com/media/Sck7F4p8Ln521Yznju/giphy.gif)
+
 ###
 Live Link : [here](https://burberryproj.firebaseapp.com)
