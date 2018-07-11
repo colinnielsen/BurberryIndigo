@@ -15,7 +15,8 @@ Single page site for new Burberry colonge "Indigo". Project was made as an inter
 
 ## Screen Shot 🖥
 ###
-![image](https://i.imgur.com/ZQIQavR.jpg)
+![image](https://user-images.githubusercontent.com/33375223/42599738-7b0f1bbe-851d-11e8-9d69-8e4834bed883.png)
+
 
 ###
 Live Link : [here](https://burberryproj.firebaseapp.com)
