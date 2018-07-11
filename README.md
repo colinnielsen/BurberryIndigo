@@ -13,9 +13,9 @@ Single page site for new Burberry colonge "Indigo". Project was made as an inter
 * Use css instead of .scrollIntoView for better Safari experience
 * Refine Mobile compatibility
 
-## Demo
+## Screen Shot 🖥
 ###
-![gif](https://media.giphy.com/media/aCKFl2Dc4yLkvwTxJz/giphy.gif)
+![image](https://imgur.com/a/soiQIWl)
 
 ###
 Live Link : [here](https://burberryproj.firebaseapp.com)
