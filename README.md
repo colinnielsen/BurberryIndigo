@@ -20,3 +20,6 @@ Single page site for new Burberry colonge "Indigo". Project was made as an inter
 
 ###
 Live Link : [here](https://burberryproj.firebaseapp.com)
+
+#### license
+MIT
